@@ -30,35 +30,10 @@ export class HomePage {
       birthDate: [{ value: '', disabled: false }, [Validators.required]],
     });
 
-
-    this.getUserFromApi();
-
-    // this.userProvider.getUsers();
-
   }
 
   ionViewDidLoad() {
-
-    // console.log('DATA->', this.userProvider.getUsers());
   }
-
-  getUserFromApi() {
-    // this.requestService.getData().subscribe(
-    //   data => {
-    //     // refresh the list
-    //     console.log('DATAs', data);
-    //     data.array.forEach(element => {
-    //       console.log('cadaElemnto', element)
-    //       // this.userList.push(element.identification);
-    //     });
-    //   },
-    //   error => {
-    //     // return Observable.throw(error);  // Angular 5/RxJS 5.5
-    //   }
-    // );
-  }
-
-
 
   is18YearsOld(year, month, day) {
     return new Date(year + 18, month - 1, day) <= new Date();
@@ -68,7 +43,6 @@ export class HomePage {
   register() {
 
     const birthdate = this.updateInfoForm.controls['birthDate'].value;
-   //  const dateFormatted = this.parseISOString(birthdate);
     const dateFormatted = this.userProvider.parseISOString(birthdate);
 
     console.log('Mayor de edad', this.is18YearsOld(dateFormatted.year, dateFormatted.month, dateFormatted.day))
@@ -107,12 +81,10 @@ export class HomePage {
     this.requestService.requesPost(dto).subscribe(
       response => {
         // refresh the list
-        console.log('RESPUESTA', response);
         this.router.navigate(['customer']);
       },
       // tslint:disable-next-line:no-shadowed-variable
       error => {
-        console.log('ERROR->', error);
         this.presentAlert('No podemos continuar,por favor intenta más tarde');
       }
     );

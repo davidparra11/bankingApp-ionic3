@@ -37,7 +37,6 @@ export class CustomerPage implements OnInit {
    * hacemos la aprobacion o no del cliente.
    */
   validate() {
-    console.log('validate');
     if (this.allValidations()) {
 
       const startDate = this.customerForm.controls['startDate'].value;
@@ -100,7 +99,6 @@ export class CustomerPage implements OnInit {
   }
 
   validateNit(value) {
-    console.log('validando nit', value.length);
     if (value.toString().length === 10) {
       return false;
     } else {
