@@ -1,10 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>customer</ion-title>
+    <ion-title class="primary-text" text-center>Banking App</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-row>
+        <ion-col col-12 class="padding-0 margin-top-20">
+          <p class="title-text" text-center>Formulario de aprobación de crédito.</p>
+        </ion-col>
+      </ion-row>
   <ion-row>
     <ion-col col-10 class="padding-0">
 
@@ -26,13 +31,12 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Fecha Ingreso</ion-label>
-          <!-- <ion-input type="text" formControlName="startDate" [brmasker]="{mask:'00/00/0000', len:10}"></ion-input> -->
           <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DDDD MMMM YYYY" formControlName="startDate">
           </ion-datetime>
         </ion-item>
 
         <br>
-        <button ion-button color="secondary" [disabled]="!customerForm.valid" class="bank-btn">Aprobar</button>
+        <button ion-button color="secondary" [disabled]="!customerForm.valid" class="bank-btn" text-center>Aprobar</button>
       </form>
 
     </ion-col>

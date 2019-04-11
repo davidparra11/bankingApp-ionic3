@@ -7,12 +7,6 @@ export class UserProvider {
 
   constructor() { }
 
-
-
-  //   return this.requestService.getData()[0].map(response => {
-  //     return response;
-  // });
-
   public parseISOString(date) {
     const b = date.split(/\D+/);
     console.log('separado', b[0], b[1], b[2]);
