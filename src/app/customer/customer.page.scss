@@ -1,0 +1,22 @@
+$color1: #FE5D26;
+$color2: #F2C078;
+$color3: #FAEDCA;
+$color4: #7EBC89;
+$color5: #C1DBB3;
+
+
+.bank-btn {
+    width: 216px;
+    height: 48px;
+    border-radius: 100px;
+    border: solid 1px $color4;
+    background-color: $color4;
+    color: white;
+    font-weight: 600;
+    // margin-top: 20px;
+}
+
+.bank-btn:disabled {
+    background-color: $color5;
+    color: #250a0a;
+}

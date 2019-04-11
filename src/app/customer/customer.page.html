@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>customer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col col-10 class="padding-0">
+
+      <form [formGroup]="customerForm" (ngSubmit)="validate()">
+
+        <ion-item>
+          <ion-label position="floating">Compañia</ion-label>
+          <ion-input type="text" maxlength="30" formControlName="companyName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nit</ion-label>
+          <ion-input type="number" maxlength="10" formControlName="nit" max></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Salario</ion-label>
+          <ion-input type="text" formControlName="salary"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fecha Ingreso</ion-label>
+          <!-- <ion-input type="text" formControlName="startDate" [brmasker]="{mask:'00/00/0000', len:10}"></ion-input> -->
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DDDD MMMM YYYY" formControlName="startDate">
+          </ion-datetime>
+        </ion-item>
+
+        <br>
+        <button ion-button color="secondary" [disabled]="!customerForm.valid" class="bank-btn">Aprobar</button>
+      </form>
+
+    </ion-col>
+  </ion-row>
+</ion-content>

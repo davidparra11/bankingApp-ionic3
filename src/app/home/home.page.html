@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+        Banking App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col col-12 class="padding-0">
+      <p>Formulario de registro.</p>
+    </ion-col>
+  </ion-row>
+
+  <!-- <ion-row>
+    <ion-col col-12 class="padding-0">
+      <form [formGroup]="updateInfoForm" novalidate (ngSubmit)="updateSafeInfo()">
+        <ion-label for="identification">Cedula</ion-label>
+        <ion-input id="identification" formControlName="identification" type="text"></ion-input>
+        <div
+          *ngIf="updateInfoForm.controls.identification.errors?.valid && (updateInfoForm.controls.identification.dirty || updateInfoForm.controls.identification.touched)"
+          class="error-text">El número debe iniciar con 4.</div>
+
+        <br>
+
+        <ion-label for="firstName">Nombre</ion-label>
+        <input type="text" formControlName="firstName">
+
+
+        <br>
+
+        <ion-label for="lastName">Apellido</ion-label>
+        <input type="text" formControlName="lastName">
+
+        <ion-label for="birthDate">nacimiento</ion-label>
+        <input type="text" formControlName="birthDate" mask="00/00/0000" placeholder="dd/MM/aaaa">
+
+        <button (click)="register()" [disabled]="updateInfoForm.invalid">Register me!</button>
+      </form>
+
+    </ion-col>
+  </ion-row> -->
+
+
+  <ion-row>
+      <ion-col col-10 class="padding-0">
+  
+        <form [formGroup]="updateInfoForm" (ngSubmit)="register()">
+  
+          <ion-item>
+            <ion-label position="floating">Cédula</ion-label>
+            <ion-input type="number" maxlength="15" formControlName="identification"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" maxlength="20" formControlName="firstName" ></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input type="text" maxlength="20" formControlName="lastName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Naciemnto</ion-label>
+            <!-- <ion-input type="text" formControlName="startDate" [brmasker]="{mask:'00/00/0000', len:10}"></ion-input> -->
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DDDD MMMM YYYY" formControlName="birthDate">
+            </ion-datetime>
+          </ion-item>
+  
+          <br>
+          <button ion-button color="secondary" [disabled]="!updateInfoForm.valid" class="bank-btn">Ingresar</button>
+        </form>
+  
+      </ion-col>
+    </ion-row>
+</ion-content>
